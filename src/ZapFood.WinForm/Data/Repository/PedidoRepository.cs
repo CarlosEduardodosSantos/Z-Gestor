@@ -535,11 +535,12 @@ namespace ZapFood.WinForm.Data.Repository
                             parns.Add("@Ped_Data", pedido.DataPedido.Date);
                             parns.Add("@Ped_Hora", pedido.DataPedido);
 
-                            var trocoPara = pedido.payments.methods.Sum(t => t.cash?.changeFor);
-                            var troco = trocoPara > 0 ? trocoPara - pedido.valorTotal : 0;
+                            //var trocoPara = pedido.payments.methods.Sum(t => t.cash?.changeFor);
+                            //var troco = trocoPara > 0 ? trocoPara - pedido.valorTotal : 0;
 
 
-                            parns.Add("@Troco", troco < 0 ? 0 : troco);
+                            //parns.Add("@Troco", troco < 0 ? 0 : troco);
+                            parns.Add("@Troco", pedido.payments.changeFor);
                             parns.Add("@valor", pedido.valorTotal);
                             parns.Add("@Taxa_Adicional", produtoEntregaId == 0 ? pedido.total.deliveryFee : 0);
                             parns.Add("@xMedicar", 0);
