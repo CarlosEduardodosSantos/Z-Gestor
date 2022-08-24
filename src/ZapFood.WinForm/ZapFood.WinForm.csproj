@@ -1,0 +1,830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C5BDF53-2BB7-4B17-888A-621B2042408C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZapFood.WinForm</RootNamespace>
+    <AssemblyName>Z-FoodGestor</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gestor_zfood.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\referencias\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2019.2.6.0, Culture=neutral, PublicKeyToken=417583d16d08abed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Users\Wesley\Desktop\Nova pasta\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2019.2.5.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Users\Wesley\Desktop\Nova pasta\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2019.2.5.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Users\Wesley\Desktop\Nova pasta\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB, Version=5.0.3.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\referencias\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\referencias\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\referencias\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSetting.cs" />
+    <Compile Include="Componente\DataGridViewGrouper\DataGridViewGrouper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\DataGridViewGrouper\DataGridViewGrouperContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\DataGridViewGrouper\DataGridViewGrouperControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componente\DataGridViewGrouper\DataGridViewGrouperControl.designer.cs">
+      <DependentUpon>DataGridViewGrouperControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\DataGridViewGrouper\GroupingInfo.cs" />
+    <Compile Include="Componente\DataGridViewGrouper\GroupingOptions.cs" />
+    <Compile Include="Componente\DataGridViewGrouper\GroupingSource.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\DataGridViewGrouper\GroupList.cs" />
+    <Compile Include="Componente\DataGridViewGrouper\SearchBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componente\DataGridViewGrouper\SearchBox.designer.cs">
+      <DependentUpon>SearchBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\DataGridViewGrouper\Support.cs" />
+    <Compile Include="Componente\ImprimirComprovante.cs" />
+    <Compile Include="Componente\PopupNotifier\PopupNotifier.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\PopupNotifier\PopupNotifierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Componente\ReadOnlyComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\TextBoxDecimal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\TextBoxDecimal.Designer.cs">
+      <DependentUpon>TextBoxDecimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\TextBoxInsert.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componente\TextBoxInsert.designer.cs">
+      <DependentUpon>TextBoxInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componente\UcPedidoResumo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componente\UcPedidoResumo.Designer.cs">
+      <DependentUpon>UcPedidoResumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Entity\Categoria.cs" />
+    <Compile Include="Data\Entity\Cliente.cs" />
+    <Compile Include="Data\Entity\Endereco.cs" />
+    <Compile Include="Data\Entity\Pedido.cs" />
+    <Compile Include="Data\Entity\PedidoAdicional.cs" />
+    <Compile Include="Data\Entity\PedidoItem.cs" />
+    <Compile Include="Data\Entity\PedidoParte.cs" />
+    <Compile Include="Data\Entity\PedidoZapFood.cs" />
+    <Compile Include="Data\Entity\Produto.cs" />
+    <Compile Include="Data\Entity\VapVupVersao.cs" />
+    <Compile Include="Data\LiteDbRepository\ILiteDbRepository.cs" />
+    <Compile Include="Data\LiteDbRepository\LiteDbRepository.cs" />
+    <Compile Include="Data\Repository\AccessTokenRepository.cs" />
+    <Compile Include="Data\LiteDbRepository\BaseLiteDbRepository.cs" />
+    <Compile Include="Data\Repository\BaseRepository.cs" />
+    <Compile Include="Data\Repository\CaixaRepository.cs" />
+    <Compile Include="Data\Repository\CepRepository.cs" />
+    <Compile Include="Data\Repository\ClienteRepository.cs" />
+    <Compile Include="Data\Repository\InstalacaoRepository.cs" />
+    <Compile Include="Data\Repository\PedidoRepository.cs" />
+    <Compile Include="Data\Repository\PedidoZapFoodRepository.cs" />
+    <Compile Include="Data\Repository\ProdutoRepository.cs" />
+    <Compile Include="Data\Repository\SistemaRepository.cs" />
+    <Compile Include="Data\Repository\VendedorRepository.cs" />
+    <Compile Include="Data\Service\AccessTokenService.cs" />
+    <Compile Include="Data\Service\Interface\IAccessTokenService.cs" />
+    <Compile Include="Data\Service\Interface\IDataServiceBase.cs" />
+    <Compile Include="Data\Service\Interface\IPedidoGestorService.cs" />
+    <Compile Include="Data\Service\PedidoGestorService.cs" />
+    <Compile Include="DeliveryApp\Enum\OrderStatus.cs" />
+    <Compile Include="DeliveryApp\Utils\Constants.cs" />
+    <Compile Include="DeliveryApp\Utils\ConvertApp.cs" />
+    <Compile Include="FormRating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRating.Designer.cs">
+      <DependentUpon>FormRating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroCupom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroCupom.Designer.cs">
+      <DependentUpon>FormCadastroCupom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroProdutos.Designer.cs">
+      <DependentUpon>FormCadastroProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategoria.Designer.cs">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInformeValor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInformeValor.Designer.cs">
+      <DependentUpon>FormInformeValor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMotivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMotivo.Designer.cs">
+      <DependentUpon>FormMotivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPedidoItens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPedidoItens.Designer.cs">
+      <DependentUpon>FormPedidoItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPesquisaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPesquisaProduto.Designer.cs">
+      <DependentUpon>FormPesquisaProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProdutoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProdutoCadastro.Designer.cs">
+      <DependentUpon>FormProdutoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProdutoComplementares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProdutoComplementares.Designer.cs">
+      <DependentUpon>FormProdutoComplementares.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPushNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPushNotification.Designer.cs">
+      <DependentUpon>FormPushNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelacaoGrupoCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRelacaoGrupoCategoria.Designer.cs">
+      <DependentUpon>FormRelacaoGrupoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSplash.Designer.cs">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFlayerCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFlayerCadastro.Designer.cs">
+      <DependentUpon>FrmFlayerCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestor.Designer.cs">
+      <DependentUpon>FrmGestor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromGrupoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromGrupoProduto.Designer.cs">
+      <DependentUpon>FromGrupoProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTipoOpcoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTipoOpcoes.Designer.cs">
+      <DependentUpon>FormTipoOpcoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcoes.cs" />
+    <Compile Include="GetValueApp.cs" />
+    <Compile Include="Helper\ObjetListHelper.cs" />
+    <Compile Include="IFoodAutenticate\ClientHelper.cs" />
+    <Compile Include="Instalacao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Instalacao.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\RowEmpt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\RowEmpt.Designer.cs">
+      <DependentUpon>RowEmpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\RowDeliveryApp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\RowDeliveryApp.Designer.cs">
+      <DependentUpon>RowDeliveryApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\RowPedido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\RowPedido.Designer.cs">
+      <DependentUpon>RowPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogWriter.cs" />
+    <Compile Include="Model\AplicacaoEnum.cs" />
+    <Compile Include="Model\Bairro.cs" />
+    <Compile Include="Model\Cep.cs" />
+    <Compile Include="Model\Cidade.cs" />
+    <Compile Include="DeliveryApp\Model\ComplementCategorie.cs" />
+    <Compile Include="DeliveryApp\Model\FidelityProgram.cs" />
+    <Compile Include="DeliveryApp\Model\Item.cs" />
+    <Compile Include="DeliveryApp\Model\Order.cs" />
+    <Compile Include="DeliveryApp\Model\Pizza.cs" />
+    <Compile Include="DeliveryApp\Model\ResultOrder.cs" />
+    <Compile Include="Model\Ifood\GenericSimpleResult.cs" />
+    <Compile Include="Model\Ifood\Merchant.cs" />
+    <Compile Include="Model\Ifood\PedidoIffod.cs" />
+    <Compile Include="Model\Ifood\TipoAplicativoEnumModel.cs" />
+    <Compile Include="Model\Ifood\UserCodeModel.cs" />
+    <Compile Include="Model\PedidoMeioMeioComplementos.cs" />
+    <Compile Include="Model\ProdutoShifts.cs" />
+    <Compile Include="Model\Rating.cs" />
+    <Compile Include="Model\RestauranteShift.cs" />
+    <Compile Include="Model\Cupom.cs" />
+    <Compile Include="Model\CupomMovimentacao.cs" />
+    <Compile Include="Model\EspeciePagamento.cs" />
+    <Compile Include="Model\Estado.cs" />
+    <Compile Include="Model\Flayer.cs" />
+    <Compile Include="Model\FormaPagamento.cs" />
+    <Compile Include="Model\Ifood\AccessTokenModelView.cs" />
+    <Compile Include="Model\Ifood\PedidoIFood.cs" />
+    <Compile Include="Model\Ifood\PollingModel.cs" />
+    <Compile Include="Model\PedidoRootModel.cs" />
+    <Compile Include="Model\PedidoViewModel.cs" />
+    <Compile Include="Model\ProdutoGrupo.cs" />
+    <Compile Include="Model\ProdutoOpcaoTipo.cs" />
+    <Compile Include="Model\ProdutoOpcaoTipoEnum.cs" />
+    <Compile Include="Model\ProdutoRoot.cs" />
+    <Compile Include="Model\ProdutosOpcaoTipoRelacao.cs" />
+    <Compile Include="Model\RelacaoGrupoCategoriaViewModel.cs" />
+    <Compile Include="Model\Restaurante.cs" />
+    <Compile Include="Model\ResultService.cs" />
+    <Compile Include="Model\RootModel.cs" />
+    <Compile Include="Model\RootResult.cs" />
+    <Compile Include="Model\SistemaEnum.cs" />
+    <Compile Include="Model\SituacaoCadastro.cs" />
+    <Compile Include="Model\SituacaoCadastroEnum.cs" />
+    <Compile Include="Model\SituacaoVapVuptEnum.cs" />
+    <Compile Include="Model\TipoDatabaseEnum.cs" />
+    <Compile Include="Model\TipoDescricaoEnumView.cs" />
+    <Compile Include="Model\VendedorModel.cs" />
+    <Compile Include="MsgBoxExt.cs" />
+    <Compile Include="Componente\MenssageTime\MyMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Componente\MenssageTime\MyMessageBox.designer.cs">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutoWinzard\ProdutoWinzardForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutoWinzard\ProdutoWinzardForm1.designer.cs">
+      <DependentUpon>ProdutoWinzardForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutoWinzard\ProdutoWinzardFrmParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutoWinzard\ProdutoWinzardFrmParent.designer.cs">
+      <DependentUpon>ProdutoWinzardFrmParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RelacionarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelacionarProduto.Designer.cs">
+      <DependentUpon>RelacionarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\CategoriaService.cs" />
+    <Compile Include="Service\ComplementosService.cs" />
+    <Compile Include="Service\MerchantService.cs" />
+    <Compile Include="Service\PedidoDeliveyAppService.cs" />
+    <Compile Include="Service\ProdutoShiftService.cs" />
+    <Compile Include="Service\RatingService.cs" />
+    <Compile Include="Service\RestauranteShiftService.cs" />
+    <Compile Include="Service\CupomService.cs" />
+    <Compile Include="Service\FlayerService.cs" />
+    <Compile Include="Service\FormaPagamentoService.cs" />
+    <Compile Include="Service\IBaseService.cs" />
+    <Compile Include="Service\LocalAtendimentoService.cs" />
+    <Compile Include="Service\LocalizacaoService.cs" />
+    <Compile Include="Service\PedidoIfoodService.cs" />
+    <Compile Include="Service\PedidoService.cs" />
+    <Compile Include="Service\PedidoVapVuptService.cs" />
+    <Compile Include="Service\ProdutoGrupoService.cs" />
+    <Compile Include="Service\ProdutoOpcaoService.cs" />
+    <Compile Include="Service\ProdutoService.cs" />
+    <Compile Include="Service\PushNotificationService.cs" />
+    <Compile Include="Service\RestauranteService.cs" />
+    <Compile Include="SobreZfood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SobreZfood.Designer.cs">
+      <DependentUpon>SobreZfood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="TablessControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TamanhoEnumView.cs" />
+    <Compile Include="Wizard\form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\form5.Designer.cs">
+      <DependentUpon>form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\frm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\frm1.designer.cs">
+      <DependentUpon>frm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\frm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\frm2.designer.cs">
+      <DependentUpon>frm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\frm6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\frm6.designer.cs">
+      <DependentUpon>frm6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\frm4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\frm4.designer.cs">
+      <DependentUpon>frm4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\frm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\frm3.designer.cs">
+      <DependentUpon>frm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\frmParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\frmParent.designer.cs">
+      <DependentUpon>frmParent.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Componente\DataGridViewGrouper\DataGridViewGrouperControl.resx">
+      <DependentUpon>DataGridViewGrouperControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componente\DataGridViewGrouper\SearchBox.resx">
+      <DependentUpon>SearchBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componente\TextBoxInsert.resx">
+      <DependentUpon>TextBoxInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componente\UcPedidoResumo.resx">
+      <DependentUpon>UcPedidoResumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRating.resx">
+      <DependentUpon>FormRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroCupom.resx">
+      <DependentUpon>FormCadastroCupom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroProdutos.resx">
+      <DependentUpon>FormCadastroProdutos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategoria.resx">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInformeValor.resx">
+      <DependentUpon>FormInformeValor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMotivo.resx">
+      <DependentUpon>FormMotivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPedidoItens.resx">
+      <DependentUpon>FormPedidoItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPesquisaProduto.resx">
+      <DependentUpon>FormPesquisaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProdutoCadastro.resx">
+      <DependentUpon>FormProdutoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProdutoComplementares.resx">
+      <DependentUpon>FormProdutoComplementares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPushNotification.resx">
+      <DependentUpon>FormPushNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRelacaoGrupoCategoria.resx">
+      <DependentUpon>FormRelacaoGrupoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSplash.resx">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFlayerCadastro.resx">
+      <DependentUpon>FrmFlayerCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestor.resx">
+      <DependentUpon>FrmGestor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromGrupoProduto.resx">
+      <DependentUpon>FromGrupoProduto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipoOpcoes.resx">
+      <DependentUpon>FormTipoOpcoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Instalacao.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Instalacao.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\RowEmpt.resx">
+      <DependentUpon>RowEmpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\RowDeliveryApp.resx">
+      <DependentUpon>RowDeliveryApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\RowPedido.resx">
+      <DependentUpon>RowPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componente\MenssageTime\MyMessageBox.resx">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutoWinzard\ProdutoWinzardForm1.resx">
+      <DependentUpon>ProdutoWinzardForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutoWinzard\ProdutoWinzardFrmParent.resx">
+      <DependentUpon>ProdutoWinzardFrmParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelacionarProduto.resx">
+      <DependentUpon>RelacionarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SobreZfood.resx">
+      <DependentUpon>SobreZfood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\form5.resx">
+      <DependentUpon>form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\frm1.resx">
+      <DependentUpon>frm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\frm2.resx">
+      <DependentUpon>frm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\frm6.resx">
+      <DependentUpon>frm6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\frm4.resx">
+      <DependentUpon>frm4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\frm3.resx">
+      <DependentUpon>frm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\frmParent.resx">
+      <DependentUpon>frmParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundoverde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logovip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoEstacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01-redwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="gestor_zfood.ico" />
+    <None Include="Resources\Zimmer.png" />
+    <None Include="Resources\nav_pedidos.png" />
+    <None Include="Resources\nav_cancelado.png" />
+    <None Include="Resources\nav_pesquisa.png" />
+    <None Include="Resources\nav_config.png" />
+    <None Include="Resources\nav_delivery.png" />
+    <None Include="Resources\min_form.png" />
+    <None Include="Resources\max_form.png" />
+    <None Include="Resources\mini-logo.png" />
+    <None Include="Resources\senha.png" />
+    <None Include="Resources\loja.png" />
+    <None Include="Resources\servidores.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\padlock.png" />
+    <None Include="Resources\logo_novo_tudo_junto.png" />
+    <None Include="Resources\Logo_Desenho.png" />
+    <None Include="Resources\Zip-Splash.png" />
+    <None Include="Resources\reject32.png" />
+    <None Include="Resources\print32.png" />
+    <None Include="Resources\refuse1.png" />
+    <None Include="Resources\yes 21.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\yes 2.png" />
+    <None Include="Resources\trash2.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\refuse.png" />
+    <None Include="Resources\refuse 2.png" />
+    <None Include="Resources\pause_16.png" />
+    <None Include="Resources\play_16.png" />
+    <None Include="Resources\play_32.png" />
+    <None Include="Resources\pause_32.png" />
+    <None Include="Resources\unnamed.png" />
+    <None Include="Resources\Search_16.png" />
+    <None Include="Resources\up32.png" />
+    <None Include="Resources\remover_32.png" />
+    <None Include="Resources\obs_32.png" />
+    <None Include="Resources\remove_16.png" />
+    <None Include="Resources\SAIR_16.png" />
+    <None Include="Resources\zipMiniLogo.png" />
+    <None Include="Resources\Search_48.png" />
+    <None Include="Resources\support__58.png" />
+    <None Include="Resources\stack_58.png" />
+    <None Include="Resources\LOGO_ORIGINAL_220.png" />
+    <None Include="Resources\WhatsApp Image 2018-09-05 at 08.35.22.jpeg" />
+    <None Include="Resources\Smoke_Error.wav" />
+    <None Include="bin\Release\bell.wav" />
+    <Content Include="Resources\1416378199_notification_warning.png" />
+    <None Include="Resources\z_.png" />
+    <None Include="Resources\png3.png" />
+    <None Include="Resources\logo_zip.png" />
+    <None Include="Resources\LOGO-ZIP Software-vazado %281%29.png" />
+    <None Include="Resources\bell.wav" />
+    <None Include="Resources\divisor.png" />
+    <None Include="Resources\delivery-icon.png" />
+    <None Include="Resources\delivery48.png" />
+    <None Include="Resources\icon_48.png" />
+    <None Include="Resources\analytics_58.png" />
+    <None Include="Resources\barchart_58.png" />
+    <None Include="Resources\barchart2_58.png" />
+    <None Include="Resources\cart_58.png" />
+    <None Include="Resources\Delete_48.png" />
+    <None Include="Resources\Delete_481.png" />
+    <None Include="Resources\Delete_482.png" />
+    <None Include="Resources\Delete_16.png" />
+    <None Include="Resources\3eblw.png" />
+    <None Include="Resources\back_.jpg" />
+    <None Include="Resources\btncinza.png" />
+    <None Include="Resources\comprar_38.png" />
+    <None Include="Resources\go_38.png" />
+    <None Include="Resources\circle_green_16.png" />
+    <None Include="Resources\circle_red_16.png" />
+    <None Include="Resources\down32.png" />
+    <None Include="Resources\add_wirth_32.png" />
+    <None Include="Resources\help_16.png" />
+    <None Include="Resources\circle_yellow_16.png" />
+    <None Include="Resources\logo-neemo.png" />
+    <None Include="Resources\logo-neemo1.png" />
+    <None Include="Resources\aprove.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\back2.png" />
+    <None Include="Resources\Captura de tela 2021-12-14 105851.png" />
+    <None Include="Resources\fundo_splash.png" />
+    <None Include="Resources\form_install.png" />
+    <None Include="Resources\form_install_txt2.png" />
+    <None Include="Resources\gb-form.png" />
+    <None Include="Resources\base-de-dados.png" />
+    <None Include="Resources\cash-register.png" />
+    <None Include="Resources\autorizacao.png" />
+    <None Include="Resources\eu-iria.png" />
+    <None Include="Resources\integracao-de-dados.png" />
+    <None Include="Resources\carteira-de-motorista.png" />
+    <None Include="Resources\brasil.png" />
+    <None Include="Resources\endereco.png" />
+    <None Include="Resources\form_txt_ok.png" />
+    <None Include="Resources\download-amrelo.png" />
+    <None Include="Resources\excluir.png" />
+    <None Include="Resources\entrega.png" />
+    <None Include="Resources\fechar_form.png" />
+    <None Include="Resources\ico_delivery.png" />
+    <None Include="Resources\ico_config.png" />
+    <None Include="Resources\ico_pesquisa.png" />
+    <None Include="Resources\ico_cancelado.png" />
+    <None Include="Resources\ico_pedidos.png" />
+    <None Include="Resources\Image1.png" />
+    <Content Include="Resources\logo125x125.gif" />
+    <Content Include="Resources\logo250x135.gif" />
+    <None Include="Resources\save-document-icone-9747-16.png" />
+    <None Include="Resources\add-more-icone-9795-16.png" />
+    <None Include="Resources\check-writing-tasks-todo-icone-4872-16.png" />
+    <None Include="Resources\cp0bta.jpg" />
+    <Content Include="Resources\Grip.png" />
+    <Content Include="Componente\PopupNotifier\Icon.ico" />
+    <None Include="Resources\remove-icone-5931-16.png" />
+    <None Include="Resources\verify-correct-icone-9268-16.png" />
+    <None Include="Resources\title_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

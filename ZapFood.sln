@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZapFood.WinForm", "src\ZapFood.WinForm\ZapFood.WinForm.csproj", "{7C5BDF53-2BB7-4B17-888A-621B2042408C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "GestorInstalador", "GestorInstalador\GestorInstalador.vdproj", "{1BC10F32-4062-44EE-B7B2-79BFFE593251}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C5BDF53-2BB7-4B17-888A-621B2042408C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C5BDF53-2BB7-4B17-888A-621B2042408C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C5BDF53-2BB7-4B17-888A-621B2042408C}.Debug|x86.ActiveCfg = Debug|x86
+		{7C5BDF53-2BB7-4B17-888A-621B2042408C}.Debug|x86.Build.0 = Debug|x86
+		{7C5BDF53-2BB7-4B17-888A-621B2042408C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C5BDF53-2BB7-4B17-888A-621B2042408C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C5BDF53-2BB7-4B17-888A-621B2042408C}.Release|x86.ActiveCfg = Release|x86
+		{7C5BDF53-2BB7-4B17-888A-621B2042408C}.Release|x86.Build.0 = Release|x86
+		{1BC10F32-4062-44EE-B7B2-79BFFE593251}.Debug|Any CPU.ActiveCfg = Debug
+		{1BC10F32-4062-44EE-B7B2-79BFFE593251}.Debug|x86.ActiveCfg = Debug
+		{1BC10F32-4062-44EE-B7B2-79BFFE593251}.Release|Any CPU.ActiveCfg = Release
+		{1BC10F32-4062-44EE-B7B2-79BFFE593251}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCC4199A-5E9A-4BDF-9369-B448D405A6D4}
+	EndGlobalSection
+EndGlobal
